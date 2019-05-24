@@ -21,8 +21,6 @@
 ### Caution
 The kmeans clustering results can't be reproduced in R 3.6 as they changed the behavior of `set.seed`. [PR#17494](https://bugs.r-project.org/bugzilla/show_bug.cgi?id=17494) 
 
-To reproduce the results, we have to set the `RNGversion` below R 3.6.
+`ComplexHeatmap 2.0` bundled in `Biocondcutor 3.9` can't reproduce the results. 
 
-```
-RNGversion("3.5")
-```
+To reproduce all results, R version should be under 3.6 and Biocondctor should be 3.8. The package information is included in the `pkg_list.txt` file under `data`

@@ -24,13 +24,13 @@ Source code is hosted on [github](https://github.com/codetrainee/Neutrophil-syst
 We first loaded libraries required for analysis. Scripts used in the analysis could be found in `data/Rscripts`. Packages and their version are specificed in a plain file as well as listed at the bottom of the page. 
 
 ### Caution
-The kmeans clustering results can't be reproduced in R 3.6 as they changed the behavior of `set.seed`. 
+The kmeans clustering results can't be reproduced in R 3.6 as they changed the behavior of `set.seed`. set `RNGversion` below R3.6 could fix the problem.  
 
-To reproduce the results, we have to set the `RNGversion` below R 3.6.
+`ComplexHeatmap 2.0` can't reproduce the heatmap results as it did in `1.20`
 
-```{r set-RNGversion}
-RNGversion("3.5")
-```
+
+
+
 
 ```{r source-R-scripts, warning=FALSE}
 source("data/Rscripts/load_libraries.R")
