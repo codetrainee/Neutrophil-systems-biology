@@ -187,11 +187,11 @@ all_stat <-
 
         mutate(all_stat, 
                !!colname := apply(subset,
-                              1,
-                              prod))
+                                  1,
+                                  prod))
       }) %>% 
   purrr::reduce(left_join) %>% 
-  mutate_at(vars(-matches("Gene_names")), list(~log2))
+  mutate_at(vars(-matches("Gene_names")), list(~log2(.)))
   
 sig_list <- c("A", "B", "C", "b", "c", "X")
 
@@ -1196,7 +1196,7 @@ data_201712 <-
                            "C_3_×_10^6_CFU_Pseudomonas_vs_100_PFU_PR8_2_invert",
                            "A_1000_PFU_PR8_vs_100_PFU_PR8_3")) %>%
   clean_data() %>% 
-  mutate_at(vars(-matches("Gene_names")), list(~log2)) %>% 
+  mutate_at(vars(-matches("Gene_names")), list(~log2(.))) %>% 
   validate_df(valid_list) %>% 
   remove_invalid()
 
