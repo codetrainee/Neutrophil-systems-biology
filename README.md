@@ -17,3 +17,12 @@
     │   └── utilities.R
     └── pkg_list.txt
 ```
+
+### Caution
+The kmeans clustering results can't be reproduced in R 3.6 as they changed the behavior of `set.seed`. [PR#17494](https://bugs.r-project.org/bugzilla/show_bug.cgi?id=17494) 
+
+To reproduce the results, we have to set the `RNGversion` below R 3.6.
+
+```
+RNGversion("3.5")
+```
